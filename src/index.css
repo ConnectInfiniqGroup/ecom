@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Branding Colors - Premium Modern Palette */
+  --brand-primary: #0f172a;       /* Deep Slate / Almost Black */
+  --brand-secondary: #4f46e5;     /* Vibrant Indigo */
+  --brand-accent: #ec4899;        /* Pink Accent for highlights */
+  --brand-green: #10b981;         /* Status Tag Green */
+  --brand-light-blue: #0ea5e9;    /* Info Tag Blue */
+  
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-dark: #020617;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border-color: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-glass: rgba(255, 255, 255, 0.5);
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Premium Soft Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Base resets & typography */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--header-height, 120px);
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  color: var(--brand-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Mockup Layout Elements */
+.container {
+  max-width: 1320px !important;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--bg-glass) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--border-glass) !important;
+  box-shadow: var(--shadow-glass) !important;
+}
+
+/* Custom Buttons matching Modern UI */
+.btn {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: var(--radius-pill) !important;
+  padding: 12px 28px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand-secondary), #3730a3) !important;
+  border-color: transparent !important;
+  color: var(--text-inverse) !important;
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39) !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.23) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline-primary {
+  background-color: transparent !important;
+  color: var(--brand-primary) !important;
+  border: 1.5px solid var(--brand-primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--brand-primary) !important;
+  color: var(--text-inverse) !important;
+}
+
+.btn-pill {
+  border-radius: var(--radius-pill) !important;
+}
+
+/* Modern Card Styling */
+.modern-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: none;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Custom badges */
+.badge-TechStore-blue {
+  background-color: rgba(14, 165, 233, 0.1);
+  color: var(--brand-light-blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.badge-TechStore-green {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--brand-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.badge-TechStore-red {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: var(--brand-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* Forms & Inputs styling */
+.form-control, .form-select {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 14px 20px !important;
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 500;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--bg-primary) !important;
+  border-color: var(--brand-secondary) !important;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* Table styling override */
+.table {
+  background-color: #ffffff;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.table th {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color) !important;
+  padding: 18px !important;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 18px !important;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.table tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* ==========================================================================
+   Interactive UI/UX Modern Styling
+   ========================================================================== */
+
+/* Product Card Specific Modernizations */
+.product-card-modern {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  aspect-ratio: 1 / 1;
+  background-color: var(--bg-secondary);
+}
+
+.product-image-zoom {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.product-card-modern:hover .product-image-zoom {
+  transform: scale(1.08);
+}
+
+.product-action-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.05); /* very light dark tint */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.product-card-modern:hover .product-action-overlay {
+  opacity: 1;
+}
+
+.action-btn-group {
+  display: flex;
+  gap: 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card-modern:hover .action-btn-group {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modern-action-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.modern-action-btn:hover {
+  background: var(--brand-primary);
+  color: var(--text-inverse);
+  transform: scale(1.05);
+}
+
+.modern-action-btn.active {
+  background: var(--brand-secondary);
+  color: var(--text-inverse);
+  border-color: var(--brand-secondary);
+}
+
+/* Free Shipping Progress Indicator */
+.free-shipping-progress-container {
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-pill);
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.free-shipping-progress-bar {
+  background: linear-gradient(90deg, #38bdf8, var(--brand-secondary));
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.free-shipping-success-bar {
+  background: linear-gradient(90deg, #34d399, var(--brand-green)) !important;
+}
+
+/* Active NavLink highlighting in Header */
+.active-nav-link, .active-nav-link-mobile {
+  color: var(--brand-secondary) !important;
+  background-color: rgba(79, 70, 229, 0.1) !important;
+  border-radius: var(--radius-sm) !important;
+}
