@@ -25,7 +25,7 @@ const api = {
   }
 };
 
-// import Logo from "../Assets/Images/image.jpeg";
+import Logo from "../Assets/Images/logo.png";
 
 const Register = () => {
   const navigate = useNavigate();

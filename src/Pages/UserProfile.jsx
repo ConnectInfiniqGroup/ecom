@@ -8,6 +8,9 @@ import Swal from "sweetalert2";
 const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
+    if (url.includes("auth/user")) {
+      return { data: { success: true, user: { id: 1, firstname: "Demo", lastname: "User", email: "demo@example.com", phone: "+1234567890", role_id: 2 } } };
+    }
     if (url.includes("getcategory")) {
       return {
         data: [

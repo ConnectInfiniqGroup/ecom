@@ -438,6 +438,11 @@ const Header = ({ isLoggedIn }) => {
                           Register
                         </Link>
                       </li>
+                      <li>
+                        <Link className="dropdown-item py-2 fw-semibold text-success" to="/dashboard" onClick={() => setAccountOpen(false)}>
+                          Dashboard (Demo)
+                        </Link>
+                      </li>
                     </>
                   )}
                 </ul>
@@ -865,12 +870,17 @@ const Header = ({ isLoggedIn }) => {
                     Dashboard
                   </Link>
                 ) : (
-                  <div className="d-flex gap-2">
-                    <Link to="/login" className="btn btn-outline-primary rounded-pill flex-grow-1" onClick={closeMobileMenu}>
-                      Login
-                    </Link>
-                    <Link to="/register" className="btn btn-primary rounded-pill flex-grow-1" onClick={closeMobileMenu}>
-                      Register
+                  <div className="d-flex flex-column gap-2 w-100">
+                    <div className="d-flex gap-2 w-100">
+                      <Link to="/login" className="btn btn-outline-primary rounded-pill flex-grow-1" onClick={closeMobileMenu}>
+                        Login
+                      </Link>
+                      <Link to="/register" className="btn btn-primary rounded-pill flex-grow-1" onClick={closeMobileMenu}>
+                        Register
+                      </Link>
+                    </div>
+                    <Link to="/dashboard" className="btn btn-outline-success rounded-pill w-100 mt-2" onClick={closeMobileMenu}>
+                      Dashboard (Demo)
                     </Link>
                   </div>
                 )}

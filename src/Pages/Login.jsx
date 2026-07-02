@@ -25,7 +25,7 @@ const api = {
   }
 };
 
-// import Logo from "../Assets/Images/image.jpeg";
+import Logo from "../Assets/Images/logo.png";
 
 const Login = ({ setIsLoggedIn }) => {
   const [loginInput, setLogin] = useState({
@@ -150,12 +150,12 @@ const Login = ({ setIsLoggedIn }) => {
                     <label htmlFor="password" className="form-label fw-bold text-dark small m-0">
                       Password
                     </label>
-                    <a
+                    <Link
                       className="text-primary small text-decoration-none"
-                      href="/shop/reset-password"
+                      to="/reset-password"
                     >
                       Forgot?
-                    </a>
+                    </Link>
                   </div>
                   <div className="input-group">
                     <span className="input-group-text bg-light border-end-0 text-muted"><i className="bi bi-lock"></i></span>

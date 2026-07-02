@@ -21,6 +21,9 @@ import ApprovedReviewsTab from "../Components/ApprovedReviewsTab.jsx";
 const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
+    if (url.includes("auth/user")) {
+      return { data: { success: true, user: { id: 1, first_name: "Demo", last_name: "User", email: "demo@example.com", phone: "+1234567890", role_id: 2 } } };
+    }
     if (url.includes("getcategory")) {
       return {
         data: [
@@ -29,6 +32,30 @@ const api = {
           { category_id: 3, categoryname: "Accessories", slug: "accessories" }
         ]
       };
+    }
+    if (url.includes("address")) {
+      return { data: { status: 200, data: [{ address_id: 1, address_type: "Home", full_name: "Demo User", phone: "+1 234 567 8900", address: "123 Demo Street", suburb: "Techville", state: "CA", postcode: "90210", country: "United States", is_default: 1 }] } };
+    }
+    if (url.includes("notifications/unread-count")) {
+      return { data: { success: true, unread_count: 2 } };
+    }
+    if (url.includes("notifications")) {
+      return { data: { success: true, data: [
+        { notification_id: 1, title: "Order Shipped!", message: "Your order #101 is on its way.", status: "unread", created_at: new Date().toISOString() },
+        { notification_id: 2, title: "Welcome!", message: "Thanks for joining us.", status: "unread", created_at: new Date(Date.now() - 86400000).toISOString() }
+      ] } };
+    }
+    if (url.includes("user/orders")) {
+      return { data: { status: 200, data: [
+        { order_id: 101, created_at: new Date().toISOString(), total_price: "299.99", payment_status: "paid", payment_method: "stripe", items: [{product_name: "Demo Laptop", quantity: 1, unit_price: "299.99"}] },
+        { order_id: 102, created_at: new Date(Date.now() - 172800000).toISOString(), total_price: "49.99", payment_status: "pending", payment_method: "paypal", items: [{product_name: "Wireless Mouse", quantity: 1, unit_price: "49.99"}] }
+      ] } };
+    }
+    if (url.includes("orders/cancellations")) {
+      if (url.includes("status=refunded")) {
+        return { data: { success: true, data: [{ cancellation_id: 1, order_id: 100, refund_amount: "89.99", processed_at: new Date(Date.now() - 259200000).toISOString(), reason: "Item defective" }] } };
+      }
+      return { data: { success: true, data: [] } };
     }
     if (url.includes("cart/view")) {
       return { data: { data: { items: [], cart_total: 0, cart_count: 0 } } };
@@ -153,18 +180,14 @@ const Dashboard = ({ handleLogout }) => {
 
     const fetchUserData = async () => {
       try {
-        const token = localStorage.getItem("auth_token");
-        if (!token) {
-          if (isMounted) {
-            setUser(null);
-            setIsInitialLoad(false);
-          }
-          return;
-        }
-
         const response = await api.get("/auth/user");
-        if (isMounted && response.data) {
-          setUser(response.data);
+        if (isMounted) {
+          if (response.data && response.data.user) {
+            setUser(response.data.user);
+          } else {
+            setUser(null);
+          }
+          setIsInitialLoad(false);
         }
       } catch (err) {
         console.error("Error fetching user:", err);

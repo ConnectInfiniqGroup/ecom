@@ -5,8 +5,8 @@ const MobileNavbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const isLoggedIn = !!localStorage.getItem("auth_token");
-  const accountLink = isLoggedIn ? "/dashboard" : "/login";
+  const isLoggedIn = true; // Hardcoded to true for demo
+  const accountLink = "/dashboard";
 
   const navItems = [
     {

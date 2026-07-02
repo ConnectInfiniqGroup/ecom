@@ -209,13 +209,7 @@ function AppContent() {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route
           path="/dashboard/*"
-          element={
-            isLoggedIn ? (
-              <AdminPrivateRoute handleLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
+          element={<AdminPrivateRoute handleLogout={handleLogout} />}
         />
         <Route path="/faq" element={<FAQ />} />
         <Route

@@ -5,6 +5,11 @@ import GlobalButton from "../Components/Button";
 const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
+    if (url.includes("user/products/to-review")) {
+      return { data: { success: true, data: [
+        { product_id: 1, name: "Demo Product to Review", image_url: "", order_id: 101, purchased_at: new Date(Date.now() - 432000000).toISOString() }
+      ] } };
+    }
     if (url.includes("getcategory")) {
       return { data: [
         { category_id: 1, categoryname: "Laptops", slug: "laptops" },
