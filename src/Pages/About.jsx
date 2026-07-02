@@ -10,7 +10,7 @@ const About = () => {
     <>
       <Helmet>
         {/* Basic SEO */}
-        <title>About Us | TechStore Alarm Systems</title>
+        <title>About Us | TechStore </title>
         <meta
           name="description"
           content="TECHSTORE is a premier Australian security company specializing in Electronic Security, Home Automation, Audio Visual, Data Cabling, and Ducted Vacuum systems. ASIAL accredited with 20+ years of experience delivering integrated, hassle-free solutions."
@@ -19,14 +19,14 @@ const About = () => {
           name="keywords"
           content="TECHSTORE, TechStore Alarm System, security companies Australia, electronic security Sydney, home automation Australia, audio visual installation, data cabling contractors, ducted vacuum systems, ASIAL Silver Member, security license holders, integrated security solutions, Dynalite certified, commercial security, residential automation, access control, CCTV installation Australia"
         />
-        <meta name="author" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="author" content="TECHSTORE  Australia" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://shop.TechStorealarm.com.au/" />
 
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="TECHSTORE Alarm Systems | Electronic Security & Automation Experts"
+          content="TECHSTORE  | Electronic Security & Automation Experts"
         />
         <meta
           property="og:description"
@@ -34,7 +34,7 @@ const About = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shop.TechStorealarm.com.au/" />
-        <meta property="og:site_name" content="TECHSTORE Alarm Systems" />
+        <meta property="og:site_name" content="TECHSTORE " />
 
         {/* Social Links */}
         <meta
@@ -56,20 +56,20 @@ const About = () => {
             {/* Left Column: Image */}
             <div className="col-lg-6">
               <div className="position-relative">
-                <div 
-                  className="position-absolute bg-danger rounded-3" 
-                  style={{ 
-                    top: "-15px", 
-                    left: "-15px", 
-                    width: "100px", 
-                    height: "100px", 
+                <div
+                  className="position-absolute bg-danger rounded-3"
+                  style={{
+                    top: "-15px",
+                    left: "-15px",
+                    width: "100px",
+                    height: "100px",
                     zIndex: 0,
                     opacity: 0.15
                   }}
                 />
-                <img 
-                  src={Ad1} 
-                  alt="TechStore Office Building" 
+                <img
+                  src={Ad1}
+                  alt="TechStore Office Building"
                   className="img-fluid rounded-3 shadow-lg position-relative w-100"
                   style={{ zIndex: 1, objectFit: "cover", minHeight: "360px" }}
                 />
@@ -89,8 +89,8 @@ const About = () => {
               {/* Checkmark Bullets */}
               <div className="d-flex flex-column gap-3 mb-4">
                 <div className="d-flex align-items-start gap-3">
-                  <div className="rounded-circle d-flex align-items-center justify-content-center" 
-                       style={{ width: "36px", height: "36px", backgroundColor: "rgba(220, 38, 38, 0.1)", color: "var(--brand-secondary)", flexShrink: 0 }}>
+                  <div className="rounded-circle d-flex align-items-center justify-content-center"
+                    style={{ width: "36px", height: "36px", backgroundColor: "rgba(220, 38, 38, 0.1)", color: "var(--brand-secondary)", flexShrink: 0 }}>
                     <i className="bi bi-check-lg fs-5 fw-bold"></i>
                   </div>
                   <div>
@@ -100,8 +100,8 @@ const About = () => {
                 </div>
 
                 <div className="d-flex align-items-start gap-3">
-                  <div className="rounded-circle d-flex align-items-center justify-content-center" 
-                       style={{ width: "36px", height: "36px", backgroundColor: "rgba(220, 38, 38, 0.1)", color: "var(--brand-secondary)", flexShrink: 0 }}>
+                  <div className="rounded-circle d-flex align-items-center justify-content-center"
+                    style={{ width: "36px", height: "36px", backgroundColor: "rgba(220, 38, 38, 0.1)", color: "var(--brand-secondary)", flexShrink: 0 }}>
                     <i className="bi bi-check-lg fs-5 fw-bold"></i>
                   </div>
                   <div>
@@ -111,8 +111,8 @@ const About = () => {
                 </div>
 
                 <div className="d-flex align-items-start gap-3">
-                  <div className="rounded-circle d-flex align-items-center justify-content-center" 
-                       style={{ width: "36px", height: "36px", backgroundColor: "rgba(220, 38, 38, 0.1)", color: "var(--brand-secondary)", flexShrink: 0 }}>
+                  <div className="rounded-circle d-flex align-items-center justify-content-center"
+                    style={{ width: "36px", height: "36px", backgroundColor: "rgba(220, 38, 38, 0.1)", color: "var(--brand-secondary)", flexShrink: 0 }}>
                     <i className="bi bi-check-lg fs-5 fw-bold"></i>
                   </div>
                   <div>
@@ -138,7 +138,7 @@ const About = () => {
                 <div className="col-6 col-lg-3" key={idx}>
                   <div className="p-3">
                     <div className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3 text-danger"
-                         style={{ width: "60px", height: "60px", backgroundColor: "rgba(220, 38, 38, 0.08)" }}>
+                      style={{ width: "60px", height: "60px", backgroundColor: "rgba(220, 38, 38, 0.08)" }}>
                       <i className={`bi ${stat.icon} fs-3`}></i>
                     </div>
                     <h2 className="fw-bold mb-1 text-dark" style={{ fontSize: "2.5rem" }}>{stat.number}</h2>
@@ -169,7 +169,7 @@ const About = () => {
             ].map((cred, index) => (
               <div className="col-md-6 col-lg-4" key={index}>
                 <div className="bg-white border rounded-3 p-4 h-100 shadow-sm d-flex gap-3 align-items-start hover-translate"
-                     style={{ transition: "transform 0.2s, box-shadow 0.2s" }}>
+                  style={{ transition: "transform 0.2s, box-shadow 0.2s" }}>
                   <div className="rounded-3 p-2 bg-light text-primary" style={{ flexShrink: 0 }}>
                     <i className={`bi ${cred.icon} fs-4`}></i>
                   </div>

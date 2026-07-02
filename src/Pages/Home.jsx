@@ -15,11 +15,13 @@ const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
     if (url.includes("getcategory")) {
-      return { data: [
-        { category_id: 1, categoryname: "Laptops", slug: "laptops" },
-        { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
-        { category_id: 3, categoryname: "Accessories", slug: "accessories" }
-      ] };
+      return {
+        data: [
+          { category_id: 1, categoryname: "Laptops", slug: "laptops" },
+          { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
+          { category_id: 3, categoryname: "Accessories", slug: "accessories" }
+        ]
+      };
     }
     if (url.includes("cart/view")) {
       return { data: { data: { items: [], cart_total: 0, cart_count: 0 } } };
@@ -147,7 +149,7 @@ const Home = () => {
       <Helmet>
         {/* Basic SEO */}
         <title>
-          TechStore Alarm Systems | Integrated Security & Automation Solutions
+          TechStore  | Integrated Security & Automation Solutions
           Australia
         </title>
 
@@ -161,14 +163,14 @@ const Home = () => {
           content="TECHSTORE, TechStore Alarm System, security companies Australia, electronic security Sydney, home automation Australia, audio visual installation, data cabling contractors, ducted vacuum systems, ASIAL Silver Member, security license holders, integrated security solutions, Dynalite certified, commercial security, residential automation, access control, CCTV installation Australia"
         />
 
-        <meta name="author" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="author" content="TECHSTORE  Australia" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://shop.TechStorealarm.com.au/" />
 
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="TECHSTORE Alarm Systems | Electronic Security & Automation Experts"
+          content="TECHSTORE  | Electronic Security & Automation Experts"
         />
 
         <meta
@@ -178,7 +180,7 @@ const Home = () => {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shop.TechStorealarm.com.au/" />
-        <meta property="og:site_name" content="TECHSTORE Alarm Systems" />
+        <meta property="og:site_name" content="TECHSTORE " />
 
         {/* Social Links */}
         <meta
@@ -200,7 +202,7 @@ const Home = () => {
         />
 
         {/* Instagram */}
-        <meta name="instagram:title" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="instagram:title" content="TECHSTORE  Australia" />
 
         <meta
           name="instagram:description"
@@ -219,15 +221,15 @@ const Home = () => {
                 <span className="text-uppercase fw-bold" style={{ color: "var(--brand-light-blue)", fontSize: "14px", letterSpacing: "1px" }}>
                   Smart | Reliable | Secure
                 </span>
-                
+
                 <h1 className="fw-bold mt-2 mb-3 display-5" style={{ color: "var(--brand-primary)", lineHeight: "1.2" }}>
                   Advanced Security For Your Peace of Mind
                 </h1>
-                
+
                 <p className="text-muted fs-5 mb-4" style={{ maxWidth: "500px" }}>
-                  Explore our wide range of innovative alarm systems, CCTV solutions, and smart security products.
+                  Explore our wide range of innovative , CCTV solutions, and smart security products.
                 </p>
-                
+
                 <div className="d-flex gap-3">
                   <Link to="/shop" className="btn btn-primary rounded-pill px-4 py-2 text-decoration-none shadow-sm" style={{ background: "var(--brand-primary)" }}>
                     Shop Now <i className="bi bi-arrow-right"></i>
@@ -237,11 +239,11 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
-              
+
               <div className="col-lg-6 text-center">
                 <img
                   src={Hero}
-                  alt="TechStore Alarm Systems"
+                  alt="TechStore "
                   className="img-fluid"
                   style={{ maxHeight: "500px", objectFit: "contain" }}
                 />
@@ -301,11 +303,10 @@ const Home = () => {
           {/* Item Type Filter */}
           <div className="d-flex flex-wrap gap-2 pt-2 pb-4">
             <button
-              className={`btn rounded-pill px-4 py-2 fw-semibold transition-all ${
-                selectedItemType === ""
+              className={`btn rounded-pill px-4 py-2 fw-semibold transition-all ${selectedItemType === ""
                   ? "btn-primary shadow-sm text-white"
                   : "btn-light shadow-sm text-dark border border-light"
-              }`}
+                }`}
               onClick={() => setSelectedItemType("")}
               style={{ fontSize: "13px" }}
             >
@@ -315,11 +316,10 @@ const Home = () => {
             {itemTypes.map((type) => (
               <button
                 key={type}
-                className={`btn rounded-pill px-4 py-2 fw-semibold transition-all ${
-                  selectedItemType === type
+                className={`btn rounded-pill px-4 py-2 fw-semibold transition-all ${selectedItemType === type
                     ? "btn-primary shadow-sm text-white"
                     : "btn-light shadow-sm text-dark border border-light"
-                }`}
+                  }`}
                 onClick={() => setSelectedItemType(type)}
                 style={{ fontSize: "13px" }}
               >

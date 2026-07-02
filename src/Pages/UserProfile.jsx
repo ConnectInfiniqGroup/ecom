@@ -9,11 +9,13 @@ const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
     if (url.includes("getcategory")) {
-      return { data: [
-        { category_id: 1, categoryname: "Laptops", slug: "laptops" },
-        { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
-        { category_id: 3, categoryname: "Accessories", slug: "accessories" }
-      ] };
+      return {
+        data: [
+          { category_id: 1, categoryname: "Laptops", slug: "laptops" },
+          { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
+          { category_id: 3, categoryname: "Accessories", slug: "accessories" }
+        ]
+      };
     }
     if (url.includes("cart/view")) {
       return { data: { data: { items: [], cart_total: 0, cart_count: 0 } } };
@@ -40,7 +42,7 @@ const PasswordStrengthIndicator = ({ password }) => {
   };
 
   const getStrengthText = (strength) => {
-    switch(strength) {
+    switch (strength) {
       case 0: return { text: "Very Weak", color: "#dc3545", width: "20%" };
       case 1: return { text: "Weak", color: "#ffc107", width: "40%" };
       case 2: return { text: "Fair", color: "#fd7e14", width: "60%" };
@@ -110,13 +112,13 @@ const validateField = (fieldName, value) => {
 };
 
 // PasswordInput component
-const PasswordInput = memo(({ 
-  label, 
-  id, 
-  placeholder, 
-  value, 
-  onChange, 
-  showPassword, 
+const PasswordInput = memo(({
+  label,
+  id,
+  placeholder,
+  value,
+  onChange,
+  showPassword,
   setShowPassword,
   error,
   onBlur,
@@ -159,13 +161,13 @@ const PasswordInput = memo(({
 });
 
 // InputField wrapper
-const ValidatedInputField = memo(({ 
-  label, 
-  type, 
-  id, 
-  placeholder, 
-  value, 
-  onChange, 
+const ValidatedInputField = memo(({
+  label,
+  type,
+  id,
+  placeholder,
+  value,
+  onChange,
   onBlur,
   required,
   disabled,
@@ -228,9 +230,9 @@ const UserProfile = () => {
 
   const validatePasswordConfirmation = () => {
     if (formData.new_password && formData.new_password !== formData.new_password_confirmation) {
-      setErrors(prev => ({ 
-        ...prev, 
-        new_password_confirmation: "Passwords do not match" 
+      setErrors(prev => ({
+        ...prev,
+        new_password_confirmation: "Passwords do not match"
       }));
       return false;
     }
@@ -289,7 +291,7 @@ const UserProfile = () => {
   const validateProfileForm = () => {
     const newErrors = {};
     const fields = ['firstname', 'lastname', 'phone'];
-    
+
     fields.forEach(field => {
       const validation = validateField(field, formData[field]);
       if (!validation.isValid) {
@@ -341,11 +343,11 @@ const UserProfile = () => {
 
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate password fields
     const newErrors = {};
     if (!formData.current_password) newErrors.current_password = "Current password is required";
-    
+
     const newPassVal = validateField('password', formData.new_password);
     if (!newPassVal.isValid) newErrors.new_password = newPassVal.message;
 
@@ -433,7 +435,7 @@ const UserProfile = () => {
   return (
     <>
       <Helmet>
-        <title>Edit Profile | TechStore Alarm Systems</title>
+        <title>Edit Profile | TechStore </title>
       </Helmet>
 
       <PageHeader title="My Profile" path="Home / Profile" />
@@ -444,8 +446,8 @@ const UserProfile = () => {
           <div className="col-md-3">
             <div className="bg-white border rounded-3 shadow-sm overflow-hidden mb-4 mb-md-0">
               <div className="d-flex align-items-center p-3 gap-3 border-bottom bg-light">
-                <div 
-                  className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold shadow-sm" 
+                <div
+                  className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold shadow-sm"
                   style={{ width: "48px", height: "48px", fontSize: "18px", overflow: "hidden" }}
                 >
                   <span>{formData.firstname?.charAt(0).toUpperCase() || "U"}</span>
@@ -482,7 +484,7 @@ const UserProfile = () => {
                     <i className="bi bi-chevron-right text-muted ms-auto small" style={{ fontSize: "10px" }}></i>
                   </li>
                 ))}
-                
+
                 <li
                   className="list-group-item border-0 py-3 px-4 d-flex align-items-center gap-3 cursor-pointer text-primary border-start border-4 border-primary bg-light fw-bold"
                   style={{ cursor: "pointer" }}
@@ -514,7 +516,7 @@ const UserProfile = () => {
                   <h5 className="fw-bold text-dark mb-4 pb-2 border-bottom" style={{ color: "var(--brand-primary)" }}>
                     Personal Information
                   </h5>
-                  
+
                   <form onSubmit={handleProfileSubmit}>
                     <ValidatedInputField
                       label="First Name"
@@ -579,8 +581,8 @@ const UserProfile = () => {
                       </select>
                     </div>
 
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       className="btn btn-primary w-100 py-2.5 fw-bold"
                       disabled={isLoading}
                     >
@@ -645,8 +647,8 @@ const UserProfile = () => {
                       error={touched.new_password_confirmation ? errors.new_password_confirmation : ''}
                     />
 
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       className="btn btn-primary w-100 py-2.5 fw-bold"
                       disabled={isPasswordLoading}
                       style={{ marginTop: "32px" }}

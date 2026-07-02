@@ -35,7 +35,7 @@ walk(targetDir, (err, results) => {
     let original = content;
 
     // Remove the invalid backend URL prefix used for formatting image URLs
-    content = content.replace(/https:\/\/TechStorealarm\.com\.au\/backend\/public/g, '');
+    content = content.replace(/https:\/\/TechStore\.com\.lk\/backend\/public/g, '');
 
     if (content !== original) {
       fs.writeFileSync(file, content, 'utf8');

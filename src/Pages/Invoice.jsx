@@ -15,7 +15,7 @@ const InvoicePage = () => {
     email: "user@gmail.com",
     paymentMethod: "Stripe Secure Card Payment",
     company: {
-      name: "TechStore Alarm Systems Australia",
+      name: "TechStore  Australia",
       address: "15/51 Meacher Street, Mt. Druitt 2770, NSW",
       support: "info@TechStoregroup.biz",
     },
@@ -65,9 +65,9 @@ const InvoicePage = () => {
         <div className="row justify-content-center">
           <div className="col-lg-9 col-md-11">
             {/* Invoice Printable Section */}
-            <div 
-              ref={invoiceRef} 
-              id="invoice-section" 
+            <div
+              ref={invoiceRef}
+              id="invoice-section"
               className="bg-white border rounded-3 p-5 shadow-sm mb-4"
               style={{ minHeight: "842px" }}
             >

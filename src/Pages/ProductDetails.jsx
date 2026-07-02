@@ -15,11 +15,13 @@ const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
     if (url.includes("getcategory")) {
-      return { data: [
-        { category_id: 1, categoryname: "Laptops", slug: "laptops" },
-        { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
-        { category_id: 3, categoryname: "Accessories", slug: "accessories" }
-      ] };
+      return {
+        data: [
+          { category_id: 1, categoryname: "Laptops", slug: "laptops" },
+          { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
+          { category_id: 3, categoryname: "Accessories", slug: "accessories" }
+        ]
+      };
     }
     if (url.includes("cart/view")) {
       return { data: { data: { items: [], cart_total: 0, cart_count: 0 } } };
@@ -341,7 +343,7 @@ const ProductDetails = () => {
   return (
     <>
       <Helmet>
-        <title>{product.productname} | TechStore Alarm Systems</title>
+        <title>{product.productname} | TechStore </title>
         <meta name="description" content={product.pro_description || "Product Details"} />
       </Helmet>
 
@@ -356,7 +358,7 @@ const ProductDetails = () => {
           <div className="row g-5">
             {/* Left Column: Images */}
             <div className="col-lg-6">
-              <div 
+              <div
                 className="bg-white border rounded-3 p-4 d-flex align-items-center justify-content-center shadow-sm"
                 style={{ minHeight: "480px", overflow: "hidden" }}
               >

@@ -9,11 +9,13 @@ const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
     if (url.includes("getcategory")) {
-      return { data: [
-        { category_id: 1, categoryname: "Laptops", slug: "laptops" },
-        { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
-        { category_id: 3, categoryname: "Accessories", slug: "accessories" }
-      ] };
+      return {
+        data: [
+          { category_id: 1, categoryname: "Laptops", slug: "laptops" },
+          { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
+          { category_id: 3, categoryname: "Accessories", slug: "accessories" }
+        ]
+      };
     }
     if (url.includes("cart/view")) {
       return { data: { data: { items: [], cart_total: 0, cart_count: 0 } } };
@@ -191,7 +193,7 @@ const Categories = () => {
     <>
       <Helmet>
         {/* Basic SEO */}
-        <title>Categories | TechStore Alarm Systems</title>
+        <title>Categories | TechStore </title>
         <meta
           name="description"
           content="TECHSTORE is a premier Australian security company specializing in Electronic Security, Home Automation, Audio Visual, Data Cabling, and Ducted Vacuum systems. ASIAL accredited with 20+ years of experience delivering integrated, hassle-free solutions."
@@ -200,14 +202,14 @@ const Categories = () => {
           name="keywords"
           content="TECHSTORE, TechStore Alarm System, security companies Australia, electronic security Sydney, home automation Australia, audio visual installation, data cabling contractors, ducted vacuum systems, ASIAL Silver Member, security license holders, integrated security solutions, Dynalite certified, commercial security, residential automation, access control, CCTV installation Australia"
         />
-        <meta name="author" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="author" content="TECHSTORE  Australia" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://shop.TechStorealarm.com.au/" />
 
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="TECHSTORE Alarm Systems | Electronic Security & Automation Experts"
+          content="TECHSTORE  | Electronic Security & Automation Experts"
         />
         <meta
           property="og:description"
@@ -215,7 +217,7 @@ const Categories = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shop.TechStorealarm.com.au/" />
-        <meta property="og:site_name" content="TECHSTORE Alarm Systems" />
+        <meta property="og:site_name" content="TECHSTORE " />
 
         {/* Social Links */}
         <meta

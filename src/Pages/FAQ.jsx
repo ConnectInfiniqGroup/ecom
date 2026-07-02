@@ -23,7 +23,7 @@ const FAQ = () => {
     <>
       <Helmet>
         {/* Basic SEO */}
-        <title>Frequently Asked Questions | TechStore Alarm Systems</title>
+        <title>Frequently Asked Questions | TechStore </title>
         <meta
           name="description"
           content="TECHSTORE is a premier Australian security company specializing in Electronic Security, Home Automation, Audio Visual, Data Cabling, and Ducted Vacuum systems. ASIAL accredited with 20+ years of experience delivering integrated, hassle-free solutions."
@@ -32,14 +32,14 @@ const FAQ = () => {
           name="keywords"
           content="TECHSTORE, TechStore Alarm System, security companies Australia, electronic security Sydney, home automation Australia, audio visual installation, data cabling contractors, ducted vacuum systems, ASIAL Silver Member, security license holders, integrated security solutions, Dynalite certified, commercial security, residential automation, access control, CCTV installation Australia"
         />
-        <meta name="author" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="author" content="TECHSTORE  Australia" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://shop.TechStorealarm.com.au/" />
 
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="TECHSTORE Alarm Systems | Electronic Security & Automation Experts"
+          content="TECHSTORE  | Electronic Security & Automation Experts"
         />
         <meta
           property="og:description"
@@ -47,7 +47,7 @@ const FAQ = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shop.TechStorealarm.com.au/" />
-        <meta property="og:site_name" content="TECHSTORE Alarm Systems" />
+        <meta property="og:site_name" content="TECHSTORE " />
 
         {/* Social Links */}
         <meta
@@ -93,62 +93,62 @@ const FAQ = () => {
             <div className="accordion">
               {filteredFaqs.length > 0 ? (
                 filteredFaqs.map((item, index) => (
-                  <div 
-                    key={index} 
-                  className="bg-white border rounded-3 mb-3 overflow-hidden shadow-sm"
-                  style={{ transition: "all 0.3s ease" }}
-                >
-                  {/* Toggle Button */}
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-100 border-0 bg-white d-flex justify-content-between align-items-center px-4 py-3 text-start"
-                    aria-expanded={openFaqId === index}
-                    aria-controls={`faq-panel-${index}`}
-                    style={{ outline: "none" }}
+                  <div
+                    key={index}
+                    className="bg-white border rounded-3 mb-3 overflow-hidden shadow-sm"
+                    style={{ transition: "all 0.3s ease" }}
                   >
-                    <span className="fw-bold text-dark" style={{ fontSize: "1.05rem" }}>
-                      {item.question}
-                    </span>
-                    <div 
-                      className="rounded-circle d-flex align-items-center justify-content-center bg-light text-primary"
-                      style={{ width: "32px", height: "32px", transition: "all 0.3s ease" }}
+                    {/* Toggle Button */}
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-100 border-0 bg-white d-flex justify-content-between align-items-center px-4 py-3 text-start"
+                      aria-expanded={openFaqId === index}
+                      aria-controls={`faq-panel-${index}`}
+                      style={{ outline: "none" }}
                     >
-                      <i className={`bi ${openFaqId === index ? "bi-dash-lg" : "bi-plus-lg"} fs-6`}></i>
-                    </div>
-                  </button>
+                      <span className="fw-bold text-dark" style={{ fontSize: "1.05rem" }}>
+                        {item.question}
+                      </span>
+                      <div
+                        className="rounded-circle d-flex align-items-center justify-content-center bg-light text-primary"
+                        style={{ width: "32px", height: "32px", transition: "all 0.3s ease" }}
+                      >
+                        <i className={`bi ${openFaqId === index ? "bi-dash-lg" : "bi-plus-lg"} fs-6`}></i>
+                      </div>
+                    </button>
 
-                  {/* Answer */}
-                  {openFaqId === index && (
-                    <div
-                      id={`faq-panel-${index}`}
-                      className="px-4 pb-4 pt-2 border-top bg-white"
-                    >
-                      {item.answer && (
-                        <p
-                          className="text-secondary small mb-0"
-                          style={{ whiteSpace: "pre-line", lineHeight: "1.6", fontSize: "0.92rem" }}
-                        >
-                          {item.answer}
-                        </p>
-                      )}
-                    </div>
-                  )}
+                    {/* Answer */}
+                    {openFaqId === index && (
+                      <div
+                        id={`faq-panel-${index}`}
+                        className="px-4 pb-4 pt-2 border-top bg-white"
+                      >
+                        {item.answer && (
+                          <p
+                            className="text-secondary small mb-0"
+                            style={{ whiteSpace: "pre-line", lineHeight: "1.6", fontSize: "0.92rem" }}
+                          >
+                            {item.answer}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <div className="text-center py-5 text-muted bg-white border rounded-3 shadow-sm">
+                  <i className="bi bi-question-circle fs-2 mb-2 d-block text-secondary"></i>
+                  No matching questions found.
                 </div>
-              ))
-            ) : (
-              <div className="text-center py-5 text-muted bg-white border rounded-3 shadow-sm">
-                <i className="bi bi-question-circle fs-2 mb-2 d-block text-secondary"></i>
-                No matching questions found.
-              </div>
-            )}
+              )}
             </div>
           </div>
 
           {/* Right Column: Still Have Questions Box */}
           <div className="col-lg-4">
             <div className="bg-white border rounded-3 p-4 shadow-sm text-center sticky-top" style={{ top: "100px" }}>
-              <div 
-                className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3 text-primary" 
+              <div
+                className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3 text-primary"
                 style={{ width: "72px", height: "72px", backgroundColor: "rgba(59, 130, 246, 0.1)" }}
               >
                 <i className="bi bi-headset fs-2"></i>
@@ -157,8 +157,8 @@ const FAQ = () => {
               <p className="text-secondary small mb-4" style={{ lineHeight: "1.5" }}>
                 If you cannot find the answer to your questions in our FAQ, you can always contact our professional support team. We're here to help you 24/7.
               </p>
-              <button 
-                onClick={() => navigate("/contact")} 
+              <button
+                onClick={() => navigate("/contact")}
                 className="btn btn-primary w-100 py-2.5 fw-bold"
               >
                 Contact Support

@@ -193,7 +193,7 @@ const ContactForm = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | TechStore Alarm Systems</title>
+        <title>Contact Us | TechStore </title>
         <meta
           name="description"
           content="TECHSTORE is a premier Australian security company specializing in Electronic Security, Home Automation, Audio Visual, Data Cabling, and Ducted Vacuum systems. ASIAL accredited with 20+ years of experience delivering integrated, hassle-free solutions."
@@ -202,14 +202,14 @@ const ContactForm = () => {
           name="keywords"
           content="TECHSTORE, TechStore Alarm System, security companies Australia, electronic security Sydney, home automation Australia, audio visual installation, data cabling contractors, ducted vacuum systems, ASIAL Silver Member, security license holders, integrated security solutions, Dynalite certified, commercial security, residential automation, access control, CCTV installation Australia"
         />
-        <meta name="author" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="author" content="TECHSTORE  Australia" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://shop.TechStorealarm.com.au/contact" />
 
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="TECHSTORE Alarm Systems | Electronic Security & Automation Experts"
+          content="TECHSTORE  | Electronic Security & Automation Experts"
         />
         <meta
           property="og:description"
@@ -220,7 +220,7 @@ const ContactForm = () => {
           property="og:url"
           content="https://shop.TechStorealarm.com.au/contact"
         />
-        <meta property="og:site_name" content="TECHSTORE Alarm Systems" />
+        <meta property="og:site_name" content="TECHSTORE " />
 
         {/* Social Links */}
         <meta
@@ -261,11 +261,11 @@ const ContactForm = () => {
                   >
                     <div
                       className="rounded-3 d-flex align-items-center justify-content-center text-primary"
-                      style={{ 
-                        width: "52px", 
-                        height: "52px", 
+                      style={{
+                        width: "52px",
+                        height: "52px",
                         backgroundColor: "rgba(0, 43, 116, 0.05)",
-                        flexShrink: 0 
+                        flexShrink: 0
                       }}
                     >
                       <i className={`${item.icon} fs-4`}></i>
@@ -284,7 +284,7 @@ const ContactForm = () => {
             <div className="col-lg-7">
               <div className="bg-white border rounded-3 p-4 p-md-5 shadow-sm">
                 <h4 className="fw-bold text-dark mb-4 pb-2 border-bottom">Send Us A Message</h4>
-                
+
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
                     <label htmlFor="fullName" className="form-label fw-bold text-dark small mb-1">

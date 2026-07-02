@@ -8,11 +8,13 @@ const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
     if (url.includes("getcategory")) {
-      return { data: [
-        { category_id: 1, categoryname: "Laptops", slug: "laptops" },
-        { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
-        { category_id: 3, categoryname: "Accessories", slug: "accessories" }
-      ] };
+      return {
+        data: [
+          { category_id: 1, categoryname: "Laptops", slug: "laptops" },
+          { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
+          { category_id: 3, categoryname: "Accessories", slug: "accessories" }
+        ]
+      };
     }
     if (url.includes("cart/view")) {
       return { data: { data: { items: [], cart_total: 0, cart_count: 0 } } };
@@ -214,9 +216,9 @@ const Shop = () => {
             ...product,
             imageUrl: product.image
               ? `/storage/${product.image.replace(
-                  "public/storage/",
-                  "",
-                )}`
+                "public/storage/",
+                "",
+              )}`
               : "https://via.placeholder.com/300",
           }));
 
@@ -242,7 +244,7 @@ const Shop = () => {
       const next = prevSelected.includes(categoryId)
         ? prevSelected.filter((id) => id !== categoryId)
         : [...prevSelected, categoryId];
-      
+
       if (searchParams.has("category")) {
         const newParams = new URLSearchParams(searchParams);
         newParams.delete("category");
@@ -376,7 +378,7 @@ const Shop = () => {
   return (
     <>
       <Helmet>
-        <title>Shop | TechStore Alarm Systems</title>
+        <title>Shop | TechStore </title>
         <meta
           name="description"
           content="TECHSTORE is a premier Australian security company specializing in Electronic Security, Home Automation, Audio Visual, Data Cabling, and Ducted Vacuum systems."
@@ -385,7 +387,7 @@ const Shop = () => {
           name="keywords"
           content="TECHSTORE, TechStore Alarm System, security companies Australia, electronic security Sydney"
         />
-        <meta name="author" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="author" content="TECHSTORE  Australia" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://shop.TechStorealarm.com.au/" />
       </Helmet>
@@ -529,7 +531,7 @@ const Shop = () => {
                 <span className="text-muted small">
                   Showing {paginatedProducts.length} of {sortedProducts.length} products
                 </span>
-                
+
                 <div className="d-flex align-items-center gap-3">
                   <div className="d-flex align-items-center gap-2">
                     <span className="small text-muted" style={{ whiteSpace: "nowrap" }}>Sort By:</span>
@@ -552,7 +554,7 @@ const Shop = () => {
               {(selectedCategories.length > 0 || selectedBrands.length > 0 || selectedRatings.length > 0 || searchQuery !== "") && (
                 <div className="d-flex flex-wrap gap-2 mb-4 align-items-center text-start">
                   <span className="small fw-bold text-muted me-2">Active Filters:</span>
-                  
+
                   {/* Category badges */}
                   {categories
                     .filter((cat) => selectedCategories.includes(cat.category_id))
@@ -614,7 +616,7 @@ const Shop = () => {
 
               {/* Products Grid */}
               {loading ? (
-          <div className="row row-cols-2 row-cols-md-3 g-4">
+                <div className="row row-cols-2 row-cols-md-3 g-4">
                   {Array.from({ length: 6 }).map((_, i) => (
                     <div key={`sk-${i}`} className="col">
                       <SkeletonCard />
@@ -660,9 +662,8 @@ const Shop = () => {
                           <span className="page-link border-0 text-muted bg-transparent">...</span>
                         ) : (
                           <button
-                            className={`page-link rounded-circle border-0 d-flex align-items-center justify-content-center fw-bold ${
-                              currentPage === page ? "bg-primary text-white shadow-sm" : "bg-light text-dark hover-lift"
-                            }`}
+                            className={`page-link rounded-circle border-0 d-flex align-items-center justify-content-center fw-bold ${currentPage === page ? "bg-primary text-white shadow-sm" : "bg-light text-dark hover-lift"
+                              }`}
                             style={{ width: "40px", height: "40px" }}
                             onClick={() => handlePageChange(page)}
                           >
@@ -688,7 +689,7 @@ const Shop = () => {
           </div>
         </div>
       </section>
-      
+
       <style>{`
         @keyframes shine {
           0% { background-position: 100% 0; }

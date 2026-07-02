@@ -22,11 +22,13 @@ const api = {
   get: async (url) => {
     console.log("Local mock GET:", url);
     if (url.includes("getcategory")) {
-      return { data: [
-        { category_id: 1, categoryname: "Laptops", slug: "laptops" },
-        { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
-        { category_id: 3, categoryname: "Accessories", slug: "accessories" }
-      ] };
+      return {
+        data: [
+          { category_id: 1, categoryname: "Laptops", slug: "laptops" },
+          { category_id: 2, categoryname: "Smartphones", slug: "smartphones" },
+          { category_id: 3, categoryname: "Accessories", slug: "accessories" }
+        ]
+      };
     }
     if (url.includes("cart/view")) {
       return { data: { data: { items: [], cart_total: 0, cart_count: 0 } } };
@@ -148,7 +150,7 @@ const Dashboard = ({ handleLogout }) => {
   // -------- Auth & User Data Fetching --------
   useEffect(() => {
     let isMounted = true;
-    
+
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("auth_token");
@@ -180,11 +182,11 @@ const Dashboard = ({ handleLogout }) => {
         }
       }
     };
-    
+
     if (isInitialLoad) {
       fetchUserData();
     }
-    
+
     return () => {
       isMounted = false;
     };
@@ -963,22 +965,22 @@ const Dashboard = ({ handleLogout }) => {
   return (
     <>
       <Helmet>
-        <title>Profile Dashboard | TechStore Alarm Systems</title>
+        <title>Profile Dashboard | TechStore </title>
         <meta name="description" content="TECHSTORE is a premier Australian security company specializing in Electronic Security, Home Automation, Audio Visual, Data Cabling, and Ducted Vacuum systems. ASIAL accredited with 20+ years of experience delivering integrated, hassle-free solutions." />
         <meta name="keywords" content="TECHSTORE, TechStore Alarm System, security companies Australia, electronic security Sydney, home automation Australia, audio visual installation, data cabling contractors, ducted vacuum systems, ASIAL Silver Member, security license holders, integrated security solutions, Dynalite certified, commercial security, residential automation, access control, CCTV installation Australia" />
-        <meta name="author" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="author" content="TECHSTORE  Australia" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://TechStorealarm.com.au/shop/dashboard" />
-        <meta property="og:title" content="TECHSTORE Alarm Systems | Electronic Security & Automation Experts" />
+        <meta property="og:title" content="TECHSTORE  | Electronic Security & Automation Experts" />
         <meta property="og:description" content="Since 2008, TECHSTORE has delivered premium integrated solutions including security, automation, and AV. Fully licensed (Master License No: 000101930) and ASIAL accredited." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://TechStorealarm.com.au/shop/dashboard" />
-        <meta property="og:site_name" content="TECHSTORE Alarm Systems" />
+        <meta property="og:site_name" content="TECHSTORE " />
         <meta property="og:see_also" content="https://www.instagram.com/TechStorealarm/" />
         <meta property="og:see_also" content="https://www.facebook.com/p/TechStore-alarms-100071267801808/" />
         <meta property="fb:app_id" content="#" />
         <meta property="fb:admins" content="https://www.facebook.com/p/TechStore-alarms-100071267801808/" />
-        <meta name="instagram:title" content="TECHSTORE Alarm Systems Australia" />
+        <meta name="instagram:title" content="TECHSTORE  Australia" />
         <meta name="instagram:description" content="Integrated solutions in electronic security, automation, audio visual and data cabling. Trusted Australian security specialists since 2008." />
         <meta name="instagram:site" content="@TechStorealarm" />
       </Helmet>
@@ -992,8 +994,8 @@ const Dashboard = ({ handleLogout }) => {
             <div className="bg-white border rounded-3 shadow-sm overflow-hidden mb-4 mb-md-0">
               {/* User Profiling Card header */}
               <div className="d-flex align-items-center p-3 gap-3 border-bottom bg-light">
-                <div 
-                  className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold shadow-sm" 
+                <div
+                  className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold shadow-sm"
                   style={{ width: "48px", height: "48px", fontSize: "18px", overflow: "hidden" }}
                 >
                   {user?.user ? (
@@ -1037,9 +1039,8 @@ const Dashboard = ({ handleLogout }) => {
                   return (
                     <li
                       key={item.id}
-                      className={`list-group-item border-0 py-3 px-4 d-flex align-items-center justify-content-between cursor-pointer fw-semibold text-muted ${
-                        isActive ? "bg-light text-primary border-start border-4 border-primary" : "hover-bg-light"
-                      }`}
+                      className={`list-group-item border-0 py-3 px-4 d-flex align-items-center justify-content-between cursor-pointer fw-semibold text-muted ${isActive ? "bg-light text-primary border-start border-4 border-primary" : "hover-bg-light"
+                        }`}
                       onClick={() => handleTabChange(item.id)}
                       style={{ cursor: "pointer", transition: "all 0.2s" }}
                     >
@@ -1053,7 +1054,7 @@ const Dashboard = ({ handleLogout }) => {
                     </li>
                   );
                 })}
-                
+
                 {/* Logout Button */}
                 <li
                   className="list-group-item border-0 py-3 px-4 d-flex align-items-center gap-3 text-danger fw-semibold cursor-pointer hover-bg-light"
@@ -1082,9 +1083,8 @@ const Dashboard = ({ handleLogout }) => {
                     return (
                       <div className="col" key={item.id}>
                         <div
-                          className={`p-2 border rounded-3 bg-white position-relative hover-lift cursor-pointer ${
-                            isActive ? "border-primary text-primary fw-bold" : "text-muted"
-                          }`}
+                          className={`p-2 border rounded-3 bg-white position-relative hover-lift cursor-pointer ${isActive ? "border-primary text-primary fw-bold" : "text-muted"
+                            }`}
                           onClick={() => handleTabChange(item.id)}
                         >
                           <i className={`bi ${item.icon} fs-4 d-block ${isActive ? "text-primary" : "text-secondary"}`}></i>
