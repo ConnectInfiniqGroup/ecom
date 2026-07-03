@@ -30,7 +30,7 @@ const Footer = () => {
 
           <hr />
 
-          <div className="row py-5 d-flex align-items-center justify-content-center text-center text-md-start">
+          <div className="row py-5 text-center text-md-start">
             <div className="col-lg-3 col-md-12 col-sm-12 pb-3 d-flex flex-column align-items-center align-items-md-start">
               <div className="d-flex align-items-center mb-3">
                 <img src={Logo} alt="TechStore Logo" style={{ height: "100%", maxHeight: "100px", objectFit: "contain" }} />
@@ -62,12 +62,12 @@ const Footer = () => {
 
             <div className="col-lg-3 col-md-4 col-sm-12 pb-3">
               <h5 className="text-uppercase mb-4 fw-bold heading">
-                my account
+                Quick Links
               </h5>
               <ul className="list-unstyled small footer-links text-uppercase lh-lg">
                 <li className="mb-2 fw-semibold">
                   <a
-                    href="/shop/about"
+                    href="/about"
                     className="text-secondary position-relative text-decoration-none"
                   >
                     About Us
@@ -75,7 +75,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2 fw-semibold">
                   <a
-                    href="/shop/categories"
+                    href="/categories"
                     className="text-secondary position-relative text-decoration-none"
                   >
                     Categories
@@ -83,7 +83,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2 fw-semibold">
                   <a
-                    href="/shop/shop"
+                    href="/shop"
                     className="text-secondary position-relative text-decoration-none"
                   >
                     Shop
@@ -91,7 +91,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2 fw-semibold">
                   <a
-                    href="/shop/faq"
+                    href="/faq"
                     className="text-secondary position-relative text-decoration-none"
                   >
                     FAQ
@@ -99,7 +99,7 @@ const Footer = () => {
                 </li>
                 <li className="fw-semibold">
                   <a
-                    href="/shop/contact"
+                    href="/contact"
                     className="text-secondary position-relative text-decoration-none"
                   >
                     Contact Us

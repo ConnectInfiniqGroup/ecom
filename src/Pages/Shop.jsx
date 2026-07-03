@@ -120,17 +120,15 @@ const Shop = () => {
         selectedCategories.length === 0 ||
         selectedCategories.includes(categoryId);
 
+      const productRating = parseFloat(product.rating || product.average_rating || 0);
       const matchesRating =
         selectedRatings.length === 0 ||
-        selectedRatings.some(
-          (rating) => product.rating && product.rating >= rating,
-        );
+        selectedRatings.some((rating) => productRating >= rating);
 
+      const brandText = (product.brand || product.productname || product.name || "").toLowerCase();
       const matchesBrand =
         selectedBrands.length === 0 ||
-        selectedBrands.some((brand) =>
-          (product.productname || "").toLowerCase().includes(brand.toLowerCase())
-        );
+        selectedBrands.some((brand) => brandText.includes(brand.toLowerCase()));
 
       return matchesSearch && matchesPrice && matchesCategory && matchesRating && matchesBrand;
     });
@@ -203,30 +201,13 @@ const Shop = () => {
     fetchCategories();
   }, []);
 
-  // Fetch products based on selected categories
+  // Fetch products on mount
   useEffect(() => {
     const fetchProductsData = async () => {
       setLoading(true);
       try {
-        if (selectedCategories.length > 0) {
-          const categoryParam = selectedCategories.join(",");
-          const response = await api.get(`/category/${categoryParam}/products`);
-
-          const productsWithImages = response.data.map((product) => ({
-            ...product,
-            imageUrl: product.image
-              ? `/storage/${product.image.replace(
-                "public/storage/",
-                "",
-              )}`
-              : "https://via.placeholder.com/300",
-          }));
-
-          setProducts(productsWithImages);
-        } else {
-          const data = await fetchProducts();
-          setProducts(data);
-        }
+        const data = await fetchProducts();
+        setProducts(data);
         setCurrentPage(1);
       } catch (err) {
         console.error("Error fetching products:", err);
@@ -237,7 +218,7 @@ const Shop = () => {
     };
 
     fetchProductsData();
-  }, [selectedCategories]);
+  }, []);
 
   const handleCategorySelection = (categoryId) => {
     setSelectedCategories((prevSelected) => {

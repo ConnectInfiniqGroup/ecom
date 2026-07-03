@@ -90,17 +90,18 @@ const Categories = () => {
   const categoryProductCounts = useMemo(() => {
     const counts = {};
     for (const cat of categories || []) {
+      const catId = cat?.category_id || cat?.id;
       const count = products.filter((p) => {
         const pid = p?.category_id;
         const arr = p?.categories;
-        const nested = p?.category?.id;
+        const nested = p?.category?.id || p?.category?.category_id;
         return (
-          String(pid) === String(cat?.id) ||
-          (Array.isArray(arr) && arr.map(String).includes(String(cat?.id))) ||
-          String(nested) === String(cat?.id)
+          String(pid) === String(catId) ||
+          (Array.isArray(arr) && arr.map(String).includes(String(catId))) ||
+          String(nested) === String(catId)
         );
       }).length;
-      counts[cat?.id] = count;
+      counts[catId] = count;
     }
     return counts;
   }, [categories, products]);
@@ -117,17 +118,18 @@ const Categories = () => {
   const categoryImageMap = useMemo(() => {
     const map = {};
     for (const cat of categories || []) {
+      const catId = cat?.category_id || cat?.id;
       const match = products.find((p) => {
         const pid = p?.category_id;
         const arr = p?.categories;
-        const nested = p?.category?.id;
+        const nested = p?.category?.id || p?.category?.category_id;
         return (
-          String(pid) === String(cat?.id) ||
-          (Array.isArray(arr) && arr.map(String).includes(String(cat?.id))) ||
-          String(nested) === String(cat?.id)
+          String(pid) === String(catId) ||
+          (Array.isArray(arr) && arr.map(String).includes(String(catId))) ||
+          String(nested) === String(catId)
         );
       });
-      map[cat?.id] = match ? normalizeImageUrl(match) : null;
+      map[catId] = match ? normalizeImageUrl(match) : null;
     }
     return map;
   }, [categories, products]);
@@ -270,8 +272,9 @@ const Categories = () => {
                 ))
               ) : categories.length > 0 ? (
                 categories.map((category) => {
-                  const image = categoryImageMap[category.id] || null;
-                  const productCount = categoryProductCounts[category.id] || 0;
+                  const catId = category.category_id || category.id;
+                  const image = categoryImageMap[catId] || null;
+                  const productCount = categoryProductCounts[catId] || 0;
                   const title = category?.categoryname || "Category";
                   const description =
                     category?.cat_description ||

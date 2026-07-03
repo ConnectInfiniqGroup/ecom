@@ -218,7 +218,7 @@ function AppContent() {
         />
         <Route path="/invoice" element={<InvoicePage />} />
       </Routes>
-
+             
       <CompareModal />
       <Footer />
       <MobileNavbar />

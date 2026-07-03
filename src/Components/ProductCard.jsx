@@ -99,10 +99,10 @@ const ProductCard = ({ product }) => {
           
           <div className="d-flex align-items-center mb-3">
             <div className="text-warning small me-2">
-              {"★".repeat(Math.round(product.rating || 5))}
-              <span className="text-muted opacity-50">{"★".repeat(5 - Math.round(product.rating || 5))}</span>
+              {"★".repeat(Math.round(parseFloat(product.rating || product.average_rating) || 5))}
+              <span className="text-muted opacity-50">{"★".repeat(5 - Math.round(parseFloat(product.rating || product.average_rating) || 5))}</span>
             </div>
-            <span className="text-muted small">({product.reviews_count || 0})</span>
+            <span className="text-muted small">({product.reviews || product.reviews_count || product.total_reviews || 0})</span>
           </div>
           
           <div className="mt-auto pt-3 border-top border-opacity-10 d-flex justify-content-between align-items-end">

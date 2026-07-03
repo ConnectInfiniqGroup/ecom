@@ -133,8 +133,9 @@ const ProductCollection = () => {
     const map = {};
 
     for (const cat of categories || []) {
-      const match = products.find((p) => categoryIdMatches(p, cat?.id));
-      map[cat?.id] = match ? normalizeImageUrl(match) : null;
+      const catId = cat?.category_id || cat?.id;
+      const match = products.find((p) => categoryIdMatches(p, catId));
+      map[catId] = match ? normalizeImageUrl(match) : null;
     }
 
     return map;
@@ -212,7 +213,8 @@ const ProductCollection = () => {
               }}
             >
               {categories.map((category, index) => {
-                const itemImage = categoryImageMap[category.id] || null;
+                const catId = category?.category_id || category?.id;
+                const itemImage = categoryImageMap[catId] || null;
                 const name = category?.categoryname || "Category";
 
                 return (

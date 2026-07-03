@@ -531,7 +531,7 @@ const Header = ({ isLoggedIn }) => {
           {/* Mobile Header Bar (< 992px) */}
           <div className="d-lg-none d-flex align-items-center justify-content-between py-2">
             <Link className="navbar-brand d-flex align-items-center" to="/">
-              <img src={Logo} alt="TechStore Logo" style={{ height: "100%", maxHeight: "120px", objectFit: "contain" }} />
+              <img src={Logo} alt="TechStore Logo" style={{ height: "100%", maxHeight: "60px", objectFit: "contain" }} />
             </Link>
 
             <div className="d-flex align-items-center gap-3">
@@ -768,7 +768,7 @@ const Header = ({ isLoggedIn }) => {
             to="/"
             onClick={closeMobileMenu}
           >
-            <img src={Logo} alt="TechStore Logo" style={{ height: "100%", maxHeight: "120px", objectFit: "contain" }} />
+            <img src={Logo} alt="TechStore Logo" style={{ height: "100%", maxHeight: "60px", objectFit: "contain" }} />
           </Link>
 
           <button
